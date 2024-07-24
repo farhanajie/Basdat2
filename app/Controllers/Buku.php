@@ -20,7 +20,7 @@ class Buku extends BaseController
 
     public function index()
     {
-        $data['buku'] = $this->buku_model->getBook();
+        $data['buku'] = $this->buku_model->getBuku();
         return view('buku/buku_view', $data);
     }
 
@@ -59,5 +59,11 @@ class Buku extends BaseController
                 return redirect()->to(base_url('buku'));
             }
         }
+    }
+
+    public function lihat($id)
+    {
+        $data['buku'] = $this->buku_model->getBuku($id);
+        return view('buku/lihat_view', $data);
     }
 }

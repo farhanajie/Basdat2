@@ -19,3 +19,4 @@ $routes->get('rak/delete/(:num)','Rak::delete/$1');
 $routes->get('buku', 'Buku::index');
 $routes->get('buku/tambah', 'Buku::tambah');
 $routes->post('buku/insert','Buku::insert');
+$routes->get('buku/lihat/(:num)', 'Buku::lihat/$1');

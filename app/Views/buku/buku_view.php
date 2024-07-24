@@ -38,7 +38,7 @@ Data Buku
             <td><?php echo $buku_row->stok ?></td>
             <td class="text-center">
                 <div class="btn-group">
-                    <a href="<?php echo base_url('buku/show/' . $buku_row->id_buku); ?>" class="btn btn-sm btn-info">
+                    <a href="<?php echo base_url('buku/lihat/' . $buku_row->id_buku); ?>" class="btn btn-sm btn-info">
                         <i class="fas fa-eye"></i><span class="ms-1 d-none d-sm-inline">Lihat</span>
                     </a>
                     <a href="<?php echo base_url('buku/edit/' . $buku_row->id_buku) ?>" class="btn btn-sm btn-success">

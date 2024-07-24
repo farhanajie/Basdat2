@@ -8,7 +8,7 @@ class BukuModel extends Model
 {
     protected $table = 'buku';
 
-    public function getBook($id = false)
+    public function getBuku($id = false)
     {
         if ($id === false) {
             return $this->table('buku')
