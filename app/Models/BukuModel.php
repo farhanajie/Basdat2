@@ -24,4 +24,19 @@ class BukuModel extends Model
                         ->getRow();
         }
     }
+
+    public function insertBuku($data)
+    {
+        return $this->db->table($this->table)->insert($data);
+    }
+
+    public function updateBuku($data, $id)
+    {
+        return $this->db->table($this->table)->update($data, ['id_buku' => $id]);
+    }
+
+    public function deleteBuku($id)
+    {
+        return $this->db->table($this->table)->delete(['id_buku' => $id]);
+    }
 }
