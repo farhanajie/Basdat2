@@ -13,10 +13,10 @@ Data Buku
     <tr>
         <th class="text-center">No.</th>
         <th class="text-center">Kode</th>
-        <th class="text-center">Foto</th>
         <th class="text-center">Judul</th>
         <th class="text-center">Rak</th>
         <th class="text-center">Penulis</th>
+        <th class="text-center">Penerbit</th>
         <th class="text-center">Harga</th>
         <th class="text-center">Stok</th>
         <th class="text-center">Aksi</th>
@@ -30,10 +30,10 @@ Data Buku
         <tr>
             <td class="text-center"><?php echo $no++ ?></td>
             <td><?php echo $buku_row->kode_buku ?></td>
-            <td><img src="<?php echo base_url('uploads/' . $buku_row->foto) ?>" class="img-thumbnail rounded" width="50" height="50"></td>
             <td><?php echo $buku_row->judul ?></td>
             <td><?php echo $buku_row->nama_rak ?></td>
             <td><?php echo $buku_row->penulis ?></td>
+            <td><?php echo $buku_row->penerbit ?></td>
             <td><?php echo "Rp " . number_format($buku_row->harga) ?></td>
             <td><?php echo $buku_row->stok ?></td>
             <td class="text-center">
