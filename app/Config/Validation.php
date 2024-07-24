@@ -7,6 +7,7 @@ use CodeIgniter\Validation\StrictRules\CreditCardRules;
 use CodeIgniter\Validation\StrictRules\FileRules;
 use CodeIgniter\Validation\StrictRules\FormatRules;
 use CodeIgniter\Validation\StrictRules\Rules;
+use App\Validation\BukuValidation;
 
 class Validation extends BaseConfig
 {
@@ -25,6 +26,7 @@ class Validation extends BaseConfig
         FormatRules::class,
         FileRules::class,
         CreditCardRules::class,
+        BukuValidation::class
     ];
 
     /**
@@ -66,7 +68,7 @@ class Validation extends BaseConfig
         'harga'     => 'required|integer|max_length[10]',
         'sinopsis'  => 'max_length[255]',
         'foto'      => 'mime_in[foto,image/jpg,image/jpeg,image/png]|max_size[foto,5000]',
-        'stok'      => 'required|integer|max_length[7]',
+        'stok'      => 'required|integer|max_length[7]|positive',
     ];
 
     public array $buku_errors = [
@@ -101,10 +103,15 @@ class Validation extends BaseConfig
             'mime_in'       => 'Foto harus berupa format jpg, jpeg, atau png.',
             'max_size'      => 'Foto maksimal berukuran 5 MB.'
         ],
-        'status' => [
+        'stok' => [
             'required'      => 'Jumlah stok wajib diisi.',
             'integer'       => 'Jumlah stok harus berupa angka.',
-            'max_length'    => 'Jumlah stok tidak boleh melebihi 7 digit.'
+            'max_length'    => 'Jumlah stok tidak boleh melebihi 7 digit.',
+            'positive'      => 'Jumlah stok harus 0 atau lebih.'
         ],
     ];
+
+    function positive($num) {
+        return ($num >= 0) ? true : false;
+    }
 }
