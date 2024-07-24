@@ -1,0 +1,28 @@
+a {
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.sidebar .menu-title {
+    color: white;
+    font-size: 1.5em;
+}
+
+.nav a {
+    color: #25CCF7;
+}
+
+.nav a:hover {
+    color: #1B9CFC;
+}
+
+#table_wrapper {
+    padding: 0 30px 30px 30px;
+}
