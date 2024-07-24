@@ -22,3 +22,4 @@ $routes->post('buku/insert', 'Buku::insert');
 $routes->get('buku/lihat/(:num)', 'Buku::lihat/$1');
 $routes->get('buku/edit/(:num)', 'Buku::edit/$1');
 $routes->post('buku/update', 'Buku::update');
+$routes->get('buku/delete/(:num)', 'Buku::delete/$1');

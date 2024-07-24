@@ -107,4 +107,13 @@ class Buku extends BaseController
             }
         }
     }
+
+    public function delete($id)
+    {
+        $delete = $this->buku_model->deleteBuku($id);
+        if ($delete) {
+            session()->setFlashdata('success', 'Data buku berhasil dihapus.');
+            return redirect()->to(base_url('buku'));
+        }
+    }
 }
