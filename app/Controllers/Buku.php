@@ -29,4 +29,35 @@ class Buku extends BaseController
         $data['rak'] = $this->rak_model->getRak();
         return view('buku/tambah_view', $data);
     }
+
+    public function insert()
+    {
+        $validation = \Config\Services::validation();
+        $img = $this->request->getFile('foto');
+        $nama_foto = ($img->isValid()) ? $img->getRandomName() : 'default.jpg';
+        $data = [
+            'id_rak'  => $this->request->getPost('id_rak'),
+            'kode_buku' => $this->request->getPost('kode_buku'),
+            'judul'     => $this->request->getPost('judul'),
+            'penulis'   => $this->request->getPost('penulis'),
+            'penerbit'  => $this->request->getPost('penerbit'),
+            'harga'     => $this->request->getPost('harga'),
+            'sinopsis'  => $this->request->getPost('sinopsis') ? $this->request->getPost('sinopsis') : null,
+            'foto'      => $nama_foto,
+            'stok'    => $this->request->getPost('stok'),
+        ];
+
+        if ($validation->run($data, 'buku') == false) {
+            session()->setFlashdata('inputs', $this->request->getPost());
+            session()->setFlashdata('errors', $validation->getErrors());
+            return redirect()->to(base_url('buku/tambah'));
+        } else {
+            if ($img->isValid()) $img->move(ROOTPATH . 'public/uploads', $nama_foto);
+            $insert = $this->buku_model->insertBuku($data);
+            if ($insert) {
+                session()->setFlashdata('success', 'Data buku berhasil ditambahkan.');
+                return redirect()->to(base_url('buku'));
+            }
+        }
+    }
 }
