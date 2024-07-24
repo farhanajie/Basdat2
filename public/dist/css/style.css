@@ -26,3 +26,8 @@ a {
 #table_wrapper {
     padding: 0 30px 30px 30px;
 }
+
+.select2-container .selection .select2-selection {
+    height: calc(2.25rem + 2px);
+    max-height: calc(2.25rem + 2px);
+}
