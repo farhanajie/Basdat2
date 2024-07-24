@@ -2,7 +2,7 @@
 
 namespace App\Validation;
 
-class BukuValidation
+class BukuRules
 {
     public function positive(string $num): bool
     {
