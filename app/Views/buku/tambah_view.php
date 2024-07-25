@@ -67,5 +67,5 @@ Tambah Data Buku
 <?= $this->endSection() ?>
 
 <?= $this->section('back_url') ?>
-<?php echo base_url('book') ?>
+<?php echo base_url('buku') ?>
 <?= $this->endSection() ?>
