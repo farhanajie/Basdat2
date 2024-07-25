@@ -39,13 +39,13 @@ Data Buku
             <td class="text-center">
                 <div class="btn-group">
                     <a href="<?php echo base_url('buku/lihat/' . $buku_row->id_buku); ?>" class="btn btn-sm btn-info">
-                        <i class="fas fa-eye"></i><span class="ms-1 d-none d-sm-inline">Lihat</span>
+                        <i class="fa fa-eye"></i><span class="ms-1 d-none d-sm-inline">Lihat</span>
                     </a>
                     <a href="<?php echo base_url('buku/edit/' . $buku_row->id_buku) ?>" class="btn btn-sm btn-success">
-                        <i class="fas fa-edit"></i><span class="ms-1 d-none d-sm-inline">Edit</span>
+                        <i class="fa fa-edit"></i><span class="ms-1 d-none d-sm-inline">Edit</span>
                     </a>
                     <a href="<?php echo base_url('buku/delete/' . $buku_row->id_buku) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data buku ini?');">
-                        <i class="fas fa-trash"></i><span class="ms-1 d-none d-sm-inline">Hapus</span>
+                        <i class="fa fa-trash-alt"></i><span class="ms-1 d-none d-sm-inline">Hapus</span>
                     </a>
                 </div>
             </td>
