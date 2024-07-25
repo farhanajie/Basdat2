@@ -82,3 +82,107 @@ Stack trace:
 #10 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
 #11 D:\Project\xampp\htdocs\Basdat2\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
 #12 {main}
+INFO - 2024-07-25 05:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:33:19 --> TypeError: unlink(): Argument #2 ($context) must be of type resource or null, string given
+[Method: GET, Route: buku/delete/1]
+in APPPATH\Controllers\Buku.php on line 121.
+ 1 APPPATH\Controllers\Buku.php(121): unlink('D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads', '001')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->delete('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:37:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:37:44 --> TypeError: unlink(): Argument #2 ($context) must be of type resource or null, string given
+[Method: POST, Route: buku/update]
+in APPPATH\Controllers\Buku.php on line 103.
+ 1 APPPATH\Controllers\Buku.php(103): unlink('D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads', '001.png')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->update()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:38:55 --> TypeError: unlink(): Argument #2 ($context) must be of type resource or null, string given
+[Method: POST, Route: buku/update]
+in APPPATH\Controllers\Buku.php on line 103.
+ 1 APPPATH\Controllers\Buku.php(103): unlink('D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads', '001.jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->update()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:39:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:39:20 --> ErrorException: unlink(D:\Project\xampp\htdocs\Basdat2\public/uploads001.jpg): No such file or directory
+[Method: POST, Route: buku/update]
+in APPPATH\Controllers\Buku.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads001.jpg): No such file or directory', 'D:\\Project\\xampp\\htdocs\\Basdat2\\app\\Controllers\\Buku.php', 103)
+ 2 APPPATH\Controllers\Buku.php(103): unlink('D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads001.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->update()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:40:14 --> ErrorException: unlink(): http does not allow unlinking
+[Method: POST, Route: buku/update]
+in APPPATH\Controllers\Buku.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(): http does not allow unlinking', 'D:\\Project\\xampp\\htdocs\\Basdat2\\app\\Controllers\\Buku.php', 103)
+ 2 APPPATH\Controllers\Buku.php(103): unlink('https://localhost/Basdat2/public/public/uploads001.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->update()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:40:39 --> ErrorException: unlink(D:\Project\xampp\htdocs\Basdat2\public/uploads001.jpg): No such file or directory
+[Method: POST, Route: buku/update]
+in APPPATH\Controllers\Buku.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads001.jpg): No such file or directory', 'D:\\Project\\xampp\\htdocs\\Basdat2\\app\\Controllers\\Buku.php', 103)
+ 2 APPPATH\Controllers\Buku.php(103): unlink('D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads001.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->update()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:41:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:42:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-25 05:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-25 05:42:43 --> ErrorException: unlink(D:\Project\xampp\htdocs\Basdat2\public/uploads001.jpg): No such file or directory
+[Method: GET, Route: buku/delete/3]
+in APPPATH\Controllers\Buku.php on line 121.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads001.jpg): No such file or directory', 'D:\\Project\\xampp\\htdocs\\Basdat2\\app\\Controllers\\Buku.php', 121)
+ 2 APPPATH\Controllers\Buku.php(121): unlink('D:\\Project\\xampp\\htdocs\\Basdat2\\public/uploads001.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Buku->delete('3')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-25 05:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

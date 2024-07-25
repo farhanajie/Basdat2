@@ -34,7 +34,7 @@ class Buku extends BaseController
     {
         $validation = \Config\Services::validation();
         $img = $this->request->getFile('foto');
-        $nama_foto = ($img->isValid()) ? $img->getRandomName() : 'default.jpg';
+        $nama_foto = ($img->isValid()) ? $this->request->getPost('kode_buku') . "." . $img->guessExtension() : 'default.jpg';
         $data = [
             'id_rak'  => $this->request->getPost('id_rak'),
             'kode_buku' => $this->request->getPost('kode_buku'),
@@ -81,7 +81,7 @@ class Buku extends BaseController
         $id = $this->request->getPost('id_buku');
         $validation = \Config\Services::validation();
         $img = $this->request->getFile('foto');
-        $nama_foto = ($img->isValid()) ? $img->getRandomName() : null;
+        $nama_foto = ($img->isValid()) ? $this->request->getPost('kode_buku') . "." . $img->guessExtension() : null;
         $data = [
             'id_rak'    => $this->request->getPost('id_rak'),
             'kode_buku' => $this->request->getPost('kode_buku'),
@@ -99,7 +99,10 @@ class Buku extends BaseController
             session()->setFlashdata('errors', $validation->getErrors());
             return redirect()->to(base_url('buku/edit/' . $id));
         } else {
-            if ($img->isValid()) $img->move(ROOTPATH . 'public/uploads', $nama_foto);
+            if ($img->isValid()) {
+                unlink(ROOTPATH . 'public/uploads/' . $nama_foto);
+                $img->move(ROOTPATH . 'public/uploads', $nama_foto);
+            }
             $update = $this->buku_model->updateBuku($data, $id);
             if ($update) {
                 session()->setFlashdata('success', 'Data buku berhasil diubah.');
@@ -110,8 +113,12 @@ class Buku extends BaseController
 
     public function delete($id)
     {
+        $buku = $this->buku_model->getBuku($id);
+        $foto = $buku->foto;
+
         $delete = $this->buku_model->deleteBuku($id);
         if ($delete) {
+            unlink(ROOTPATH . 'public/uploads/' . $foto);
             session()->setFlashdata('success', 'Data buku berhasil dihapus.');
             return redirect()->to(base_url('buku'));
         }
