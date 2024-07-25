@@ -26,7 +26,7 @@ Data Transaksi
         <tr>
             <td class="text-center"><?php echo $no++ ?></td>
             <td><?php echo $transaksi_row->tanggal_transaksi ?></td>
-            <td><?php echo $transaksi_row->judul ?></td>
+            <td><a href="<?php echo base_url('buku/lihat/' . $transaksi_row->id_buku) ?>"><?php echo $transaksi_row->judul ?></a></td>
             <td><?php echo 'Rp ' . number_format($transaksi_row->harga) ?></td>
             <td><?php echo $transaksi_row->jumlah ?></td>
             <td><?php echo 'Rp ' . number_format($transaksi_row->harga_total) ?></td>
