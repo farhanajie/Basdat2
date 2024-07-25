@@ -54,4 +54,17 @@ class Transaksi extends BaseController
             }
         }
     }
+
+    public function delete($id)
+    {
+        $transaksi = $this->transaksi_model->getTransaksi($id);
+        $buku = $this->buku_model->getBuku($transaksi->id_buku);
+
+        $delete = $this->transaksi_model->deleteTransaksi($id);
+        if ($delete) {
+            $this->buku_model->updateStok($buku->id_buku, $buku->stok + $transaksi->jumlah);
+            session()->setFlashdata('success', 'Data transaksi berhasil dihapus.');
+            return redirect()->to(base_url('transaksi'));
+        }
+    }
 }

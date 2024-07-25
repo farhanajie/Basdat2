@@ -29,4 +29,9 @@ class TransaksiModel extends Model
     {
         return $this->db->table($this->table)->insert($data);
     }
+
+    public function deleteTransaksi($id)
+    {
+        return $this->db->table($this->table)->delete(['id_transaksi' => $id]);
+    }
 }
