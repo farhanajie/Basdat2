@@ -24,4 +24,9 @@ class TransaksiModel extends Model
                         ->getRow();
         }
     }
+
+    public function insertTransaksi($data)
+    {
+        return $this->db->table($this->table)->insert($data);
+    }
 }

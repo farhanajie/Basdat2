@@ -5,7 +5,7 @@ Data Transaksi
 <?= $this->endSection() ?>
 
 <?= $this->section('create_url') ?>
-<?php echo base_url('transaction/create') ?>
+<?php echo base_url('transaksi/tambah') ?>
 <?= $this->endSection() ?>
 
 <?= $this->section('table') ?>

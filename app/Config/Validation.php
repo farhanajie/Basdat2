@@ -2,7 +2,7 @@
 
 namespace Config;
 
-use App\Validation\BukuRules;
+use App\Validation\AdditionalRules;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Validation\StrictRules\CreditCardRules;
 use CodeIgniter\Validation\StrictRules\FileRules;
@@ -26,7 +26,7 @@ class Validation extends BaseConfig
         FormatRules::class,
         FileRules::class,
         CreditCardRules::class,
-        BukuRules::class
+        AdditionalRules::class
     ];
 
     /**
@@ -65,7 +65,7 @@ class Validation extends BaseConfig
         'judul'     => 'required|max_length[50]',
         'penulis'   => 'required|max_length[30]',
         'penerbit'  => 'required|max_length[30]',
-        'harga'     => 'required|integer|max_length[10]',
+        'harga'     => 'required|integer|max_length[10]|positive',
         'sinopsis'  => 'max_length[255]',
         'foto'      => 'mime_in[foto,image/jpg,image/jpeg,image/png]|max_size[foto,5000]',
         'stok'      => 'required|integer|max_length[7]|positive',
@@ -94,7 +94,8 @@ class Validation extends BaseConfig
         'harga' => [
             'required'      => 'Harga wajib diisi.',
             'integer'       => 'Harga harus berupa angka.',
-            'max_length'    => 'Harga tidak boleh melebihi 10 digit.'
+            'max_length'    => 'Harga tidak boleh melebihi 10 digit.',
+            'positive'      => 'Harga harus 0 atau lebih.'
         ],
         'sinopsis' => [
             'max_length'    => 'Sinopsis tidak boleh melebihi 255 karakter.'
@@ -111,7 +112,33 @@ class Validation extends BaseConfig
         ],
     ];
 
-    function positive($num) {
-        return ($num >= 0) ? true : false;
-    }
+    public array $transaksi = [
+        'id_buku'           => 'required',
+        'tanggal_transaksi' => 'required|valid_date',
+        'jumlah'            => 'required|max_length[7]|integer|positive|available[]',
+        'harga_total'       => 'required|max_length[20]|integer|positive'
+    ];
+
+    public array $transaksi_errors = [
+        'id_buku' => [
+            'required'      => 'Buku wajib dipilih.',
+        ],
+        'tanggal_transaksi' => [
+            'required'      => 'Tanggal transaksi wajib diisi.',
+            'valid_date'    => 'Tanggal transaksi bukan format tanggal yang benar: YYYY-MM-DD HH:MM:SS.'
+        ],
+        'jumlah' => [
+            'required'      => 'Jumlah buku wajib diisi.',
+            'max_length'    => 'Jumlah buku tidak boleh melebihi 7 angka.',
+            'integer'       => 'Jumlah buku harus berupa angka.',
+            'positive'      => 'Jumlah buku harus 0 atau lebih.',
+            'available'     => 'Jumlah buku tidak bisa melebihi stok buku.'
+        ],
+        'harga_total' => [
+            'required'      => 'Harga total wajib diisi.',
+            'max_length'    => 'Harga total tidak boleh melebihi 20 angka.',
+            'integer'       => 'Harga total harus berupa angka.',
+            'positive'      => 'Harga total harus 0 atau lebih.'
+        ],
+    ];
 }

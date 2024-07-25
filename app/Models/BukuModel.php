@@ -39,4 +39,10 @@ class BukuModel extends Model
     {
         return $this->db->table($this->table)->delete(['id_buku' => $id]);
     }
+
+    public function updateStok($id, $stok)
+    {
+        $data['stok'] = $stok;
+        return $this->db->table($this->table)->update($data, ['id_buku' => $id]);
+    }
 }
