@@ -10,8 +10,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?php echo base_url('rak') ?>" class="nav-link align-middle px-0 mb-md-3">
-                    <i class="fas fa-list"></i> <span class="ms-1 d-none d-sm-inline">Rak</span>
+                <a href="<?php echo base_url('transaksi') ?>" class="nav-link align-middle px-0 mb-md-3">
+                    <i class="fas fa-hand-holding-dollar"></i> <span class="ms-1 d-none d-sm-inline">Transaksi</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -20,8 +20,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?php echo base_url('transaksi') ?>" class="nav-link align-middle px-0 mb-md-3">
-                    <i class="fas fa-hand-holding-dollar"></i> <span class="ms-1 d-none d-sm-inline">Transaksi</span>
+                <a href="<?php echo base_url('rak') ?>" class="nav-link align-middle px-0 mb-md-3">
+                    <i class="fas fa-list"></i> <span class="ms-1 d-none d-sm-inline">Rak</span>
                 </a>
             </li>
         </ul>
