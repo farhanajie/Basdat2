@@ -24,7 +24,7 @@
             <?= $this->include('_partials/sidebar') ?>
             <div class="col py-3">
                 <div class="container-fluid">
-                    <h2 class="page-title"><?= $this->renderSection('page_title') ?></h2>
+                    <h1 class="page-title"><?= $this->renderSection('page_title') ?></h1>
                     <?= $this->renderSection('content'); ?>
                 </div>
             </div>
