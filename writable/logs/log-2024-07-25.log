@@ -6,3 +6,79 @@ INFO - 2024-07-25 04:21:14 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-07-25 04:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-07-25 04:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-07-25 04:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-25 05:03:24 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''cek_stok' BEFORE INSERT ON 'transaksi' FOR EACH ROW BEGIN IF NEW.jumlah = (S...' at line 1 in D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TRIGGER ...', 0)
+#1 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TRIGGER ...')
+#2 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TRIGGER ...')
+#3 D:\Project\xampp\htdocs\Basdat2\app\Database\Migrations\2024-07-25-113416_CreateStokTrigger.php(11): CodeIgniter\Database\BaseConnection->query('CREATE TRIGGER ...')
+#4 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateStokTrigger->up()
+#5 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#6 D:\Project\xampp\htdocs\Basdat2\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\Project\xampp\htdocs\Basdat2\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\Project\xampp\htdocs\Basdat2\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 D:\Project\xampp\htdocs\Basdat2\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-07-25 05:04:28 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'END IF; END' at line 1 in D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TRIGGER ...', 0)
+#1 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TRIGGER ...')
+#2 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TRIGGER ...')
+#3 D:\Project\xampp\htdocs\Basdat2\app\Database\Migrations\2024-07-25-113416_CreateStokTrigger.php(11): CodeIgniter\Database\BaseConnection->query('CREATE TRIGGER ...')
+#4 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateStokTrigger->up()
+#5 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#6 D:\Project\xampp\htdocs\Basdat2\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\Project\xampp\htdocs\Basdat2\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\Project\xampp\htdocs\Basdat2\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 D:\Project\xampp\htdocs\Basdat2\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-07-25 05:05:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'END IF; END' at line 1 in D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TRIGGER ...', 0)
+#1 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TRIGGER ...')
+#2 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TRIGGER ...')
+#3 D:\Project\xampp\htdocs\Basdat2\app\Database\Migrations\2024-07-25-113416_CreateStokTrigger.php(11): CodeIgniter\Database\BaseConnection->query('CREATE TRIGGER ...')
+#4 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateStokTrigger->up()
+#5 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#6 D:\Project\xampp\htdocs\Basdat2\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\Project\xampp\htdocs\Basdat2\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\Project\xampp\htdocs\Basdat2\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 D:\Project\xampp\htdocs\Basdat2\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-07-25 05:06:56 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DELIMITER //' at line 1 in D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php(312): mysqli->query('DELIMITER //', 0)
+#1 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELIMITER //')
+#2 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELIMITER //')
+#3 D:\Project\xampp\htdocs\Basdat2\app\Database\Migrations\2024-07-25-113416_CreateStokTrigger.php(11): CodeIgniter\Database\BaseConnection->query('DELIMITER //')
+#4 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateStokTrigger->up()
+#5 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#6 D:\Project\xampp\htdocs\Basdat2\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\Project\xampp\htdocs\Basdat2\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\Project\xampp\htdocs\Basdat2\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 D:\Project\xampp\htdocs\Basdat2\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-07-25 05:08:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'END IF;
+            END' at line 5 in D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\Project\xampp\htdocs\Basdat2\system\Database\MySQLi\Connection.php(312): mysqli->query('\n            CR...', 0)
+#1 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('\n            CR...')
+#2 D:\Project\xampp\htdocs\Basdat2\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('\n            CR...')
+#3 D:\Project\xampp\htdocs\Basdat2\app\Database\Migrations\2024-07-25-113416_CreateStokTrigger.php(11): CodeIgniter\Database\BaseConnection->query('\n            CR...')
+#4 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateStokTrigger->up()
+#5 D:\Project\xampp\htdocs\Basdat2\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#6 D:\Project\xampp\htdocs\Basdat2\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\Project\xampp\htdocs\Basdat2\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\Project\xampp\htdocs\Basdat2\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 D:\Project\xampp\htdocs\Basdat2\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 D:\Project\xampp\htdocs\Basdat2\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
