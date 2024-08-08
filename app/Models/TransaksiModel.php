@@ -10,15 +10,12 @@ class TransaksiModel extends Model
 
     public function getTransaksi($id = false)
     {
-        if ($id === false) {
-            return $this->table('transaksi')
-                        ->join('buku', 'buku.id_buku = transaksi.id_buku')
-                        ->get()
-                        ->getResult();
+        if (!$id) {
+            return $this->get()->getResult();
         }
         else {
             return $this->table('transaksi')
-                        ->join('buku', 'buku.id_buku = transaksi.id_buku')
+                        ->join('trxbuku', 'transaksi.id_transaksi = trxbuku.id_transaksi')
                         ->where('transaksi.id_transaksi', $id)
                         ->get()
                         ->getRow();
@@ -33,5 +30,11 @@ class TransaksiModel extends Model
     public function deleteTransaksi($id)
     {
         return $this->db->table($this->table)->delete(['id_transaksi' => $id]);
+    }
+
+    public function updateHargaTotal($id, $harga_total)
+    {
+        $data['harga_total'] = $harga_total;
+        return $this->db->table($this->table)->update($data, ['id_transaksi' => $id]);
     }
 }

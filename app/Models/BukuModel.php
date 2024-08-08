@@ -10,7 +10,7 @@ class BukuModel extends Model
 
     public function getBuku($id = false)
     {
-        if ($id === false) {
+        if (!$id) {
             return $this->table('buku')
                         ->join('rak', 'rak.id_rak = buku.id_rak')
                         ->get()

@@ -113,19 +113,32 @@ class Validation extends BaseConfig
     ];
 
     public array $transaksi = [
-        'id_buku'           => 'required',
         'tanggal_transaksi' => 'required|valid_date',
-        'jumlah'            => 'required|max_length[7]|integer|positive|available[]',
         'harga_total'       => 'required|max_length[20]|integer|positive'
     ];
 
     public array $transaksi_errors = [
-        'id_buku' => [
-            'required'      => 'Buku wajib dipilih.',
-        ],
         'tanggal_transaksi' => [
             'required'      => 'Tanggal transaksi wajib diisi.',
             'valid_date'    => 'Tanggal transaksi bukan format tanggal yang benar: YYYY-MM-DD HH:MM:SS.'
+        ],
+        'harga_total' => [
+            'required'      => 'Harga total wajib diisi.',
+            'max_length'    => 'Harga total tidak boleh melebihi 20 angka.',
+            'integer'       => 'Harga total harus berupa angka.',
+            'positive'      => 'Harga total harus 0 atau lebih.'
+        ],
+    ];
+    
+    public array $trxbuku = [
+        'id_buku'           => 'required',
+        'jumlah'            => 'required|max_length[7]|integer|positive|available[]',
+        'subtotal'          => 'required|max_length[20]|integer|positive'
+    ];
+
+    public array $trxbuku_errors = [
+        'id_buku' => [
+            'required'      => 'Buku wajib dipilih.',
         ],
         'jumlah' => [
             'required'      => 'Jumlah buku wajib diisi.',
@@ -134,11 +147,11 @@ class Validation extends BaseConfig
             'positive'      => 'Jumlah buku harus 0 atau lebih.',
             'available'     => 'Jumlah buku tidak bisa melebihi stok buku.'
         ],
-        'harga_total' => [
+        'subtotal' => [
             'required'      => 'Harga total wajib diisi.',
             'max_length'    => 'Harga total tidak boleh melebihi 20 angka.',
             'integer'       => 'Harga total harus berupa angka.',
             'positive'      => 'Harga total harus 0 atau lebih.'
-        ],
+        ]
     ];
 }
