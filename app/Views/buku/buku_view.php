@@ -11,7 +11,6 @@ Data Buku
 <?= $this->section('table') ?>
 <thead>
     <tr>
-        <th class="text-center">No.</th>
         <th class="text-center">Kode</th>
         <th class="text-center">Judul</th>
         <th class="text-center">Rak</th>
@@ -23,12 +22,8 @@ Data Buku
     </tr>
 </thead>
 <tbody>
-    <?php
-    $no = 1;
-    foreach ($buku as $buku_row) {
-    ?>
+    <?php foreach ($buku as $buku_row) { ?>
         <tr>
-            <td class="text-center"><?php echo $no++ ?></td>
             <td><?php echo $buku_row->kode_buku ?></td>
             <td><?php echo $buku_row->judul ?></td>
             <td><?php echo $buku_row->nama_rak ?></td>

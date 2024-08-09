@@ -14,7 +14,7 @@ class AlterTransaksiTable extends Migration
 
     public function down()
     {
-        $this->forge->addField([
+        $this->forge->addColumn('transaksi', [
             'id_buku' => [
                 'type'           => 'INT',
                 'constraint'     => 5,

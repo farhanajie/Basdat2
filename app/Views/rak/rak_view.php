@@ -11,19 +11,14 @@ Data Rak Buku
 <?= $this->section('table'); ?>
 <thead>
     <tr>
-        <th class="text-center">No</th>
         <th class="text-center">Kode Rak</th>
         <th class="text-center">Nama Rak</th>
         <th class="text-center">Aksi</th>
     </tr>
 </thead>
 <tbody>
-    <?php
-    $no = 1;
-    foreach ($rak as $rak_row) {
-    ?>
+    <?php foreach ($rak as $rak_row) { ?>
         <tr>
-            <td class="text-center"><?php echo $no++ ?></td>
             <td><?php echo $rak_row->kode_rak ?></td>
             <td><?php echo $rak_row->nama_rak ?></td>
             <td class="text-center">

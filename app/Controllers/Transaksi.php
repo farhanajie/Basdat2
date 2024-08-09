@@ -39,30 +39,34 @@ class Transaksi extends BaseController
         $harga_total = 0;
         $is_success = false;
 
-        foreach ($id_buku_arr as $i => $id_buku) {
-            $buku = $this->buku_model->getBuku($id_buku);
-            $harga = $buku->harga;
-            $data = [
-                'id_transaksi' => $id_transaksi,
-                'id_buku' => $id_buku,
-                'jumlah' => $jumlah_arr[$i],
-                'subtotal' => $harga * $jumlah_arr[$i]
-            ];
-            
-            if ($validation->run($data, 'trxbuku') == false) {
-                $this->transaksi_model->deleteTransaksi($id_transaksi);
-                session()->setFlashdata('errors', $validation->getErrors());
-                return redirect()->to(base_url('transaksi/tambah'));
-            } else {
-                $insert_trxbuku = $this->trxbuku_model->insertTrxBuku($data);
-                if ($insert_trxbuku) {
-                    $this->buku_model->updateStok($buku->id_buku, $buku->stok - $data['jumlah']);
-                    $harga_total += $data['subtotal'];
-                    if ($i == count($id_buku_arr) - 1) $is_success = true; 
+        if ($id_buku_arr != null && $jumlah_arr != null) {
+            foreach ($id_buku_arr as $i => $id_buku) {
+                $buku = $this->buku_model->getBuku($id_buku);
+                $harga = $buku->harga;
+                $data = [
+                    'id_transaksi' => $id_transaksi,
+                    'id_buku' => $id_buku,
+                    'jumlah' => $jumlah_arr[$i],
+                    'subtotal' => $harga * $jumlah_arr[$i]
+                ];
+                
+                if ($validation->run($data, 'trxbuku') == false) {
+                    $this->transaksi_model->deleteTransaksi($id_transaksi);
+                    session()->setFlashdata('errors', $validation->getErrors());
+                    break;
+                } else {
+                    $insert_trxbuku = $this->trxbuku_model->insertTrxBuku($data);
+                    if ($insert_trxbuku) {
+                        $this->buku_model->updateStok($buku->id_buku, $buku->stok - $data['jumlah']);
+                        $harga_total += $data['subtotal'];
+                        if ($i == count($id_buku_arr) - 1) $is_success = true; 
+                    }
                 }
             }
-
+        } else {
+            session()->setFlashdata('errors', ['Buku & jumlah wajib diisi.']);
         }
+
 
         if ($is_success) {
             $this->transaksi_model->updateHargaTotal($id_transaksi, $harga_total);
@@ -76,6 +80,7 @@ class Transaksi extends BaseController
         $validation = \Config\Services::validation();
         $data_transaksi = [
             'tanggal_transaksi' => $this->request->getPost('tanggal_transaksi'),
+            'metode_bayar' => $this->request->getPost('metode_bayar'),
             'harga_total' => 0
         ];
         $id_buku_arr = $this->request->getPost('id_buku');
@@ -88,8 +93,12 @@ class Transaksi extends BaseController
             $insert_transaksi = $this->transaksi_model->insertTransaksi($data_transaksi);
             if ($insert_transaksi) {
                 $id_transaksi = $this->transaksi_model->insertID();
-                $this->insertTrxBuku($id_transaksi, $id_buku_arr, $jumlah_arr);
-                return redirect()->to(base_url('transaksi'));
+                
+                if ($this->insertTrxBuku($id_transaksi, $id_buku_arr, $jumlah_arr)) {
+                    return redirect()->to(base_url('transaksi'));
+                } else {
+                    return redirect()->to(base_url('transaksi/tambah'));
+                }
             }
         }
     }

@@ -17,7 +17,6 @@ Data Transaksi
     </tr>
 </thead>
 <tbody>
-    <?php $no = 1 ?>
     <?php foreach ($transaksi as $transaksi_row) { ?>
         <tr>
             <td class="text-center"><?php echo $transaksi_row->tanggal_transaksi ?></td>

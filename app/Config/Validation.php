@@ -114,6 +114,7 @@ class Validation extends BaseConfig
 
     public array $transaksi = [
         'tanggal_transaksi' => 'required|valid_date',
+        'metode_bayar'      => 'required',
         'harga_total'       => 'required|max_length[20]|integer|positive'
     ];
 
@@ -121,6 +122,9 @@ class Validation extends BaseConfig
         'tanggal_transaksi' => [
             'required'      => 'Tanggal transaksi wajib diisi.',
             'valid_date'    => 'Tanggal transaksi bukan format tanggal yang benar: YYYY-MM-DD HH:MM:SS.'
+        ],
+        'metode_bayar' => [
+            'required'      => 'Metode pembayaran wajib dipilih.'
         ],
         'harga_total' => [
             'required'      => 'Harga total wajib diisi.',

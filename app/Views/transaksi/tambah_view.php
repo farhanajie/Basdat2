@@ -16,6 +16,18 @@ Tambah Data Transaksi
             <input type="text" class="form-control datetimepicker-input" id="datetimepicker" name="tanggal_transaksi" data-toggle="datetimepicker" data-target="#datetimepicker" placeholder="Masukkan tanggal dan waktu transaksi">
         </div>
     </div>
+    <div class="col-md-6">
+        <div class="mb-3">
+        <label for="metode_bayar" class="form-label">Metode Pembayaran</label>
+        <select name="metode_bayar" id="metode_bayar" class="form-select">
+            <option value="" hidden selected>Pilih metode pembayaran</option>
+            <option value="Cash">Cash</option>
+            <option value="Cash">QRIS</option>
+            <option value="Debit">Debit</option>
+            <option value="Kredit">Kredit</option>
+        </select>
+        </div>
+    </div>
 </div>
 
 <button type="button" id="add_row" class="btn"><i class="fa-solid fa-circle-plus"></i> Tambah Baris</button>
@@ -31,7 +43,7 @@ Tambah Data Transaksi
         <tbody>
             <tr>
                 <td>
-                    <select name="id_buku[]" class="form-control select_dropdown">
+                    <select name="id_buku[]" class="form-select select_dropdown">
                         <?php
                         foreach ($buku as $buku_row) {
                             if ($buku_row->stok > 0) {
@@ -82,7 +94,7 @@ Tambah Data Transaksi
         initSelect();
 
         // Add Row
-        var strBuku = '<select name="id_buku[]" class="form-control select_dropdown"><?php foreach ($buku as $buku_row) { if($buku_row->stok > 0) { ?><option value="<?php echo $buku_row->id_buku ?>"><?php echo $buku_row->judul . " - Rp" . $buku_row->harga . " - Stok: " . $buku_row->stok ?></option><?php }} ?></select>';
+        var strBuku = '<select name="id_buku[]" class="form-select select_dropdown"><?php foreach ($buku as $buku_row) { if($buku_row->stok > 0) { ?><option value="<?php echo $buku_row->id_buku ?>"><?php echo $buku_row->judul . " - Rp" . $buku_row->harga . " - Stok: " . $buku_row->stok ?></option><?php }} ?></select>';
 
         var strJumlah = '<input type="number" class="form-control" name="jumlah[]" placeholder="Masukkan jumlah buku">';
 
