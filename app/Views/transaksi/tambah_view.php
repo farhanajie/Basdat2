@@ -20,9 +20,9 @@ Tambah Data Transaksi
         <div class="mb-3">
         <label for="metode_bayar" class="form-label">Metode Pembayaran</label>
         <select name="metode_bayar" id="metode_bayar" class="form-select">
-            <option value="" hidden selected>Pilih metode pembayaran</option>
+            <option value="" hidden>Pilih metode pembayaran</option>
             <option value="Cash">Cash</option>
-            <option value="Cash">QRIS</option>
+            <option value="QRIS">QRIS</option>
             <option value="Debit">Debit</option>
             <option value="Kredit">Kredit</option>
         </select>
