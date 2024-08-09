@@ -79,6 +79,8 @@ class Transaksi extends BaseController
             session()->setFlashdata('success', 'Data transaksi berhasil ditambahkan.');
         }
 
+        return $is_success;
+
     }
 
     public function insert()
@@ -99,8 +101,8 @@ class Transaksi extends BaseController
             $insert_transaksi = $this->transaksi_model->insertTransaksi($data_transaksi);
             if ($insert_transaksi) {
                 $id_transaksi = $this->transaksi_model->insertID();
-                
-                if ($this->insertTrxBuku($id_transaksi, $id_buku_arr, $jumlah_arr)) {
+                $insert_trxbuku = $this->insertTrxBuku($id_transaksi, $id_buku_arr, $jumlah_arr);
+                if ($insert_trxbuku) {
                     return redirect()->to(base_url('transaksi'));
                 } else {
                     return redirect()->to(base_url('transaksi/tambah'));
