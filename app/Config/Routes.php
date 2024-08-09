@@ -27,6 +27,7 @@ $routes->get('buku/delete/(:num)', 'Buku::delete/$1');
 
 // Routing Transaksi
 $routes->get('transaksi', 'Transaksi::index');
+$routes->get('transaksi/lihat/(:num)', 'Transaksi::lihat/$1');
 $routes->get('transaksi/tambah', 'Transaksi::tambah');
 $routes->post('transaksi/insert', 'Transaksi::insert');
 $routes->get('transaksi/delete/(:num)', 'Transaksi::delete/$1');

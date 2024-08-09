@@ -16,9 +16,10 @@ class TransaksiModel extends Model
         else {
             return $this->table('transaksi')
                         ->join('trxbuku', 'transaksi.id_transaksi = trxbuku.id_transaksi')
+                        ->join('buku', 'trxbuku.id_buku = buku.id_buku')
                         ->where('transaksi.id_transaksi', $id)
                         ->get()
-                        ->getRow();
+                        ->getResult();
         }
     }
 

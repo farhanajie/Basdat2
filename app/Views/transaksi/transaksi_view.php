@@ -22,9 +22,14 @@ Data Transaksi
             <td class="text-center"><?php echo $transaksi_row->tanggal_transaksi ?></td>
             <td class="text-center"><?php echo 'Rp ' . number_format($transaksi_row->harga_total) ?></td>
             <td class="text-center">
-                <a href="<?php echo base_url('transaksi/delete/' . $transaksi_row->id_transaksi) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data transaksi ini?');">
-                    <i class="fa fa-trash-alt"></i> Hapus
-                </a>
+                <div class="btn-group">
+                    <a href="<?php echo base_url('transaksi/lihat/' . $transaksi_row->id_transaksi); ?>" class="btn btn-sm btn-info">
+                        <i class="fa fa-eye"></i><span class="ms-1 d-none d-sm-inline">Lihat</span>
+                    </a>
+                    <a href="<?php echo base_url('transaksi/delete/' . $transaksi_row->id_transaksi) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data transaksi ini?');">
+                        <i class="fa fa-trash-alt"></i> Hapus
+                    </a>
+                </div>
             </td>
         </tr>
     <?php } ?>

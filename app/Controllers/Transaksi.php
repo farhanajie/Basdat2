@@ -27,6 +27,12 @@ class Transaksi extends BaseController
         return view('transaksi/transaksi_view', $data);
     }
 
+    public function lihat($id)
+    {
+        $data['transaksi'] = $this->transaksi_model->getTransaksi($id);
+        return view('transaksi/lihat_view', $data);
+    }
+
     public function tambah()
     {
         $data['buku'] = $this->buku_model->getBuku();
@@ -106,11 +112,14 @@ class Transaksi extends BaseController
     public function delete($id)
     {
         $transaksi = $this->transaksi_model->getTransaksi($id);
-        $buku = $this->buku_model->getBuku($transaksi->id_buku);
+
+        foreach ($transaksi as $trxbuku) {
+            $this->buku_model->updateStok($trxbuku->id_buku, $trxbuku->stok + $trxbuku->jumlah);
+            $this->trxbuku_model->deleteTrxBuku($trxbuku->id_trxbuku);
+        }
 
         $delete = $this->transaksi_model->deleteTransaksi($id);
         if ($delete) {
-            $this->buku_model->updateStok($buku->id_buku, $buku->stok + $transaksi->jumlah);
             session()->setFlashdata('success', 'Data transaksi berhasil dihapus.');
             return redirect()->to(base_url('transaksi'));
         }
